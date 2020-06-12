@@ -1,9 +1,7 @@
 ---
-title: "Schema"
+layout: default
+title: Provider Schema
 nav_order: 1
-has_children: true
-description: |-
-  The Aiven Terraform Provider is a way to access all of your Aiven services within Terraform. Use this provider to set up and teardown services and test out configurations. Any issues, please email support@aiven.io
 ---
 ## Resources 
 ### aiven_kafka_schema_configuration 

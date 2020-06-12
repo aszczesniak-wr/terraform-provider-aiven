@@ -12,12 +12,26 @@ cache:
   - directories:
       - "$GOPATH/bin"
       - "$GOPATH/pkg"
+      - "$PWD/tmp"
 
 branches:
   only:
     - master
     - "/^v([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:\\-(rc\\.[0-9]+)*)?$/"
 
+jobs:
+  include:
+  - language: python
+    python: 3.8
+    script:
+      - mkdir tmp && pip install json-schema-generator2
+      - generate-json-schema -f aiven/templates/integration_endpoints_user_config_schema.json > tmp/integration_endpoints_user_config.schema.json
+      - generate-json-schema -f aiven/templates/integrations_user_config_schema.json > tmp/integrations_user_config.schema.json
+      - generate-json-schema -f aiven/templates/service_user_config_schema.json > tmp/service_user_config.schema.json
+      - make doc
+
 script:
   - make lint
   - make test
+
+

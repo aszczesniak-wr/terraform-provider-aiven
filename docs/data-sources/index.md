@@ -1,9 +1,7 @@
 ---
-title: Datasources
-has_children: true
+layout: default
+title: Datasources Schema
 nav_order: 2
-description: |-
-  The Aiven Terraform Provider is a way to access all of your Aiven services within Terraform. Use this provider to set up and teardown services and test out configurations. Any issues, please email support@aiven.io
 ---
 ## Data-sources 
 ### aiven_kafka_schema_configuration 
