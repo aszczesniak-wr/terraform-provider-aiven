@@ -81,6 +81,7 @@ doc:
 	python scripts/docgen.py scripts/schema.json ALL >> docs/index.md
 	python scripts/docgen.py scripts/schema.json DATASOURCES >> docs/data-sources/index.md
 	python scripts/docgen.py scripts/schema.json RESOURCES >> docs/resources/index.md
-	json-schema-docs -schema tmp/integrations_user_config.schema.json -template scripts/integrations.md.tpl > docs/resources/integrations-user-config.md
-	json-schema-docs -schema tmp/integration_endpoints_user_config.schema.json -template scripts/integration_endpoints.md.tpl > docs/resources/integration-endpoints-user-config.md
-	json-schema-docs -schema tmp/service_user_config.schema.json -template scripts/services.md.tpl > docs/resources/services-config.md
+	json-schema-docs -schema temp/integrations_user_config.schema.json -template scripts/integrations.md.tpl > docs/resources/integrations-user-config.md
+	json-schema-docs -schema temp/integration_endpoints_user_config.schema.json -template scripts/integration_endpoints.md.tpl > docs/resources/integration-endpoints-user-config.md
+	json-schema-docs -schema temp/service_user_config.schema.json -template scripts/services.md.tpl > docs/resources/services-config.md
+	rm -rf temp
